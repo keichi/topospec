@@ -17,7 +17,7 @@ class TopoSpec(app_manager.RyuApp):
     def __init__(self, *args, **kwargs):
         super(TopoSpec, self).__init__(*args, **kwargs)
         app_manager.require_app("ryu.topology.switches")
-        CONF.register_opt(StrOpt("spec_path", default="spec.yml"))
+        CONF.register_opt(StrOpt("spec_path", default="spec/mininet.yml"))
 
         self.graph = nx.Graph()
         self.spec = Spec.from_yaml(CONF.spec_path)
