@@ -1,6 +1,7 @@
 import networkx as nx
 
 from ryu.base import app_manager
+from ryu.cfg import CONF, StrOpt
 from ryu.controller.handler import MAIN_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.lib import hub
@@ -15,8 +16,11 @@ class TopoSpec(app_manager.RyuApp):
 
     def __init__(self, *args, **kwargs):
         super(TopoSpec, self).__init__(*args, **kwargs)
+        app_manager.require_app("ryu.topology.switches")
+        CONF.register_opt(StrOpt("spec_path", default="spec.yml"))
+
         self.graph = nx.Graph()
-        self.spec = Spec.from_yaml("spec.yml")
+        self.spec = Spec.from_yaml(CONF.spec_path)
         self._thread = hub.spawn_after(3, self._compare_spec)
 
     @set_ev_cls(topo_event.EventSwitchEnter, MAIN_DISPATCHER)
