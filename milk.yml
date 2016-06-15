@@ -65,15 +65,15 @@ links:
       - from: edge3
         to: milk16
     edge4_down:
-      - from: edge3
+      - from: edge4
         to: milk15
-      - from: edge3
+      - from: edge4
         to: milk17
-      - from: edge3
+      - from: edge4
         to: milk18
-      - from: edge3
+      - from: edge4
         to: milk19
-      - from: edge3
+      - from: edge4
         to: milk20
 hosts:
   - name: milk01
