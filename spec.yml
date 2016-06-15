@@ -1,0 +1,105 @@
+switches:
+  - name: core1
+    dpid: 1
+  - name: core2
+    dpid: 2
+  - name: edge1
+    dpid: 3
+  - name: edge2
+    dpid: 4
+  - name: edge3
+    dpid: 5
+  - name: edge4
+    dpid: 6
+
+links:
+  core_down:
+    core1_down:
+      - from: core1
+        to: edge1
+      - from: core1
+        to: edge2
+      - from: core1
+        to: edge3
+      - from: core1
+        to: edge4
+    core2_down:
+      - from: core2
+        to: edge1
+      - from: core2
+        to: edge2
+      - from: core2
+        to: edge3
+      - from: core2
+        to: edge4
+  edge_down:
+    edge1_down:
+      - from: edge1
+        to: host1
+      - from: edge1
+        to: host2
+      - from: edge1
+        to: host3
+      - from: edge1
+        to: host4
+    edge2_down:
+      - from: edge2
+        to: host5
+      - from: edge2
+        to: host6
+      - from: edge2
+        to: host7
+      - from: edge2
+        to: host8
+    edge3_down:
+      - from: edge3
+        to: host9
+      - from: edge3
+        to: host10
+      - from: edge3
+        to: host11
+      - from: edge3
+        to: host12
+    edge4_down:
+      - from: edge4
+        to: host13
+      - from: edge4
+        to: host14
+      - from: edge4
+        to: host15
+      - from: edge4
+        to: host16
+
+hosts:
+  - name: host1
+    mac: aa:00:00:00:00:01
+  - name: host2
+    mac: aa:00:00:00:00:02
+  - name: host3
+    mac: aa:00:00:00:00:03
+  - name: host4
+    mac: aa:00:00:00:00:04
+  - name: host5
+    mac: aa:00:00:00:00:05
+  - name: host6
+    mac: aa:00:00:00:00:06
+  - name: host7
+    mac: aa:00:00:00:00:07
+  - name: host8
+    mac: aa:00:00:00:00:08
+  - name: host9
+    mac: aa:00:00:00:00:09
+  - name: host10
+    mac: aa:00:00:00:00:0a
+  - name: host11
+    mac: aa:00:00:00:00:0b
+  - name: host12
+    mac: aa:00:00:00:00:0c
+  - name: host13
+    mac: aa:00:00:00:00:0d
+  - name: host14
+    mac: aa:00:00:00:00:0e
+  - name: host15
+    mac: aa:00:00:00:00:0f
+  - name: host16
+    mac: aa:00:00:00:00:10

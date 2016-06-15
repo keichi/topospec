@@ -1,0 +1,116 @@
+switches:
+  - name: core1
+    dpid: 1
+  - name: core2
+    dpid: 2
+  - name: edge1
+    dpid: 3
+  - name: edge2
+    dpid: 4
+  - name: edge3
+    dpid: 5
+  - name: edge4
+    dpid: 6
+
+links:
+  core_down:
+    core1_down:
+      - from: core1
+        to: edge1
+      - from: core1
+        to: edge2
+      - from: core1
+        to: edge3
+      - from: core1
+        to: edge4
+    core2_down:
+      - from: core2
+        to: edge1
+      - from: core2
+        to: edge2
+      - from: core2
+        to: edge3
+      - from: core2
+        to: edge4
+  edge_down:
+    edge1_down:
+      - from: edge1
+        to: milk01
+      - from: edge1
+        to: milk02
+      - from: edge1
+        to: milk03
+      - from: edge1
+        to: milk04
+      - from: edge1
+        to: milk06
+    edge2_down:
+      - from: edge2
+        to: milk05
+      - from: edge2
+        to: milk08
+      - from: edge2
+        to: milk09
+      - from: edge2
+        to: milk10
+    edge3_down:
+      - from: edge3
+        to: milk11
+      - from: edge3
+        to: milk12
+      - from: edge3
+        to: milk13
+      - from: edge3
+        to: milk14
+      - from: edge3
+        to: milk16
+    edge4_down:
+      - from: edge3
+        to: milk15
+      - from: edge3
+        to: milk17
+      - from: edge3
+        to: milk18
+      - from: edge3
+        to: milk19
+      - from: edge3
+        to: milk20
+hosts:
+  - name: milk01
+    mac: 00:30:48:cf:f0:39
+  - name: milk02
+    mac: 00:30:48:cf:f0:37
+  - name: milk03
+    mac: 00:30:48:cd:a5:61
+  - name: milk04
+    mac: 00:30:48:cf:f2:37
+  - name: milk05
+    mac: 00:30:48:cf:f0:c7
+  - name: milk06
+    mac: 00:30:48:f2:61:f5
+  - name: milk08
+    mac: 00:30:48:cf:f0:35
+  - name: milk09
+    mac: 00:30:48:cf:f0:a7
+  - name: milk10
+    mac: 00:30:48:f2:62:35
+  - name: milk11
+    mac: 00:30:48:cf:f0:a1
+  - name: milk12
+    mac: 00:30:48:cf:f2:35
+  - name: milk13
+    mac: 00:30:48:cf:f0:97
+  - name: milk14
+    mac: 00:30:48:cf:f0:33
+  - name: milk15
+    mac: 00:30:48:cf:f0:9f
+  - name: milk16
+    mac: 00:30:48:cf:f0:d1
+  - name: milk17
+    mac: 00:30:48:cf:f0:ab
+  - name: milk18
+    mac: 00:30:48:f1:65:77
+  - name: milk19
+    mac: 00:30:48:cf:f0:1b
+  - name: milk20
+    mac: 00:30:48:cf:f2:33

@@ -1,0 +1,84 @@
+#!/usr/bin/python
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.net import Mininet
+from mininet.node import RemoteController
+from mininet.topo import Topo
+from mininet.util import dumpNodeConnections
+
+
+class TestFatTreeTopo(Topo):
+    def build(self):
+        # Core switch s1, s2 and edge switches s3-s6
+        core1 = self.addSwitch("s1", dpid="01")
+        core2 = self.addSwitch("s2", dpid="02")
+
+        edge1 = self.addSwitch("s3", dpid="03")
+        edge2 = self.addSwitch("s4", dpid="04")
+        edge3 = self.addSwitch("s5", dpid="05")
+        edge4 = self.addSwitch("s6", dpid="06")
+
+        self.addLink(core1, edge1)
+        self.addLink(core1, edge2)
+        self.addLink(core1, edge3)
+        self.addLink(core1, edge4)
+
+        self.addLink(core2, edge1)
+        self.addLink(core2, edge2)
+        self.addLink(core2, edge3)
+        self.addLink(core2, edge4)
+
+        h1 = self.addHost("h1", mac="aa:00:00:00:00:01")
+        self.addLink(h1, edge1)
+        h2 = self.addHost("h2", mac="aa:00:00:00:00:02")
+        self.addLink(h2, edge1)
+        h3 = self.addHost("h3", mac="aa:00:00:00:00:03")
+        self.addLink(h3, edge1)
+        h4 = self.addHost("h4", mac="aa:00:00:00:00:04")
+        self.addLink(h4, edge1)
+
+        h5 = self.addHost("h5", mac="aa:00:00:00:00:05")
+        self.addLink(h5, edge2)
+        h6 = self.addHost("h6", mac="aa:00:00:00:00:06")
+        self.addLink(h6, edge2)
+        h7 = self.addHost("h7", mac="aa:00:00:00:00:07")
+        self.addLink(h7, edge2)
+        h8 = self.addHost("h8", mac="aa:00:00:00:00:08")
+        self.addLink(h8, edge2)
+
+        h9 = self.addHost("h9", mac="aa:00:00:00:00:09")
+        self.addLink(h9, edge3)
+        h10 = self.addHost("h10", mac="aa:00:00:00:00:0a")
+        self.addLink(h10, edge3)
+        h11 = self.addHost("h11", mac="aa:00:00:00:00:0b")
+        self.addLink(h11, edge3)
+        h12 = self.addHost("h12", mac="aa:00:00:00:00:0c")
+        self.addLink(h12, edge3)
+
+        h13 = self.addHost("h13", mac="aa:00:00:00:00:0d")
+        self.addLink(h13, edge4)
+        h14 = self.addHost("h14", mac="aa:00:00:00:00:0e")
+        self.addLink(h14, edge4)
+        h15 = self.addHost("h15", mac="aa:00:00:00:00:0f")
+        self.addLink(h15, edge4)
+        h16 = self.addHost("h16", mac="aa:00:00:00:00:10")
+        self.addLink(h16, edge4)
+
+
+def launch_network():
+    "Create and test a simple network"
+    topo = TestFatTreeTopo()
+    net = Mininet(topo=topo, controller=RemoteController)
+    net.start()
+
+    print "Dumping host connections"
+    dumpNodeConnections(net.hosts)
+
+    CLI(net)
+
+    net.stop()
+
+
+if __name__ == "__main__":
+    setLogLevel("info")
+    launch_network()
