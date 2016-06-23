@@ -1,0 +1,149 @@
+switches:
+  - name: core1
+    dpid: 1
+  - name: core2
+    dpid: 2
+  - name: edge1
+    dpid: 3
+  - name: edge2
+    dpid: 4
+  - name: edge3
+    dpid: 5
+  - name: edge4
+    dpid: 6
+
+links:
+  core_down:
+    core1_down:
+      - from: core1
+        to: edge1
+      - from: core1
+        to: edge2
+      - from: core1
+        to: edge3
+      - from: core1
+        to: edge4
+    core2_down:
+      - from: core2
+        to: edge1
+      - from: core2
+        to: edge2
+      - from: core2
+        to: edge3
+      - from: core2
+        to: edge4
+  edge_down:
+    edge1_down:
+      - from: edge1
+        to: pepsi01
+      - from: edge1
+        to: pepsi02
+      - from: edge1
+        to: pepsi03
+      - from: edge1
+        to: pepsi04
+      - from: edge1
+        to: pepsi05
+      - from: edge1
+        to: pepsi06
+      - from: edge1
+        to: pepsi07
+    edge2_down:
+      - from: edge2
+        to: pepsi08
+      - from: edge2
+        to: pepsi09
+      - from: edge2
+        to: pepsi10
+      - from: edge2
+        to: pepsi11
+      - from: edge2
+        to: pepsi12
+      - from: edge2
+        to: pepsi13
+      - from: edge2
+        to: pepsi14
+    edge3_down:
+      - from: edge3
+        to: pepsi15
+      - from: edge3
+        to: pepsi17
+      - from: edge3
+        to: pepsi18
+      - from: edge3
+        to: pepsi19
+      - from: edge3
+        to: pepsi20
+      - from: edge3
+        to: pepsi21
+    edge4_down:
+      - from: edge4
+        to: pepsi22
+      - from: edge4
+        to: pepsi23
+      - from: edge4
+        to: pepsi24
+      - from: edge4
+        to: pepsi25
+      - from: edge4
+        to: pepsi26
+      - from: edge4
+        to: pepsi27
+      - from: edge4
+        to: pepsi28
+
+hosts:
+  - name: pepsi01
+    mac: 00:e0:81:ce:b9:04
+  - name: pepsi02
+    mac: 00:e0:81:ce:b8:fb
+  - name: pepsi03
+    mac: 00:e0:81:ce:ba:3b
+  - name: pepsi04
+    mac: 00:e0:81:cd:6d:c2
+  - name: pepsi05
+    mac: a0:42:3f:27:10:2e
+  - name: pepsi06
+    mac: 00:e0:81:cd:6d:bf
+  - name: pepsi07
+    mac: 00:e0:81:ce:45:d9
+  - name: pepsi08
+    mac: 00:e0:81:ce:a6:a4
+  - name: pepsi09
+    mac: 00:e0:81:e4:b7:09
+  - name: pepsi10
+    mac: 00:e0:81:cd:6c:d1
+  - name: pepsi11
+    mac: 00:e0:81:ce:a4:55
+  - name: pepsi12
+    mac: 00:e0:81:cd:6c:74
+  - name: pepsi13
+    mac: 00:e0:81:ce:4a:6a
+  - name: pepsi14
+    mac: 00:e0:81:cd:6d:41
+  - name: pepsi15
+    mac: 00:e0:81:ce:43:02
+  - name: pepsi17
+    mac: 00:e0:81:e2:dd:52
+  - name: pepsi18
+    mac: 00:e0:81:ce:b8:aa
+  - name: pepsi19
+    mac: 00:e0:81:ce:44:bb
+  - name: pepsi20
+    mac: 00:e0:81:ce:ba:b0
+  - name: pepsi21
+    mac: 00:e0:81:ce:a6:a1
+  - name: pepsi22
+    mac: 00:e0:81:cd:74:27
+  - name: pepsi23
+    mac: 00:e0:81:e6:3e:da
+  - name: pepsi24
+    mac: 00:e0:81:ce:b8:b3
+  - name: pepsi25
+    mac: 00:e0:81:e6:3e:be
+  - name: pepsi26
+    mac: 00:e0:81:ce:ae:5e
+  - name: pepsi27
+    mac: 00:e0:81:ce:4a:43
+  - name: pepsi28
+    mac: 00:e0:81:e3:fa:42
