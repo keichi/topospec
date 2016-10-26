@@ -1,6 +1,6 @@
 # topospec
 
-A simple tool to check if network topology comforms to spec.
+A simple tool to check if network topology conforms to spec.
 
 ## Requirements
 
@@ -24,4 +24,4 @@ A simple tool to check if network topology comforms to spec.
 
 ## Notes
 
-- Hosts are not detected if they emit no packets.
+- Hosts are not detected if they don't emit packets.
